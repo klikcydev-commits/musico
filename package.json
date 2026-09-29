@@ -1,0 +1,25 @@
+{
+  "name": "serato-set-builder",
+  "version": "1.0.0",
+  "description": "Paste a client's song list, find the tracks in your library, and build Serato crates per moment (melodies, formalities, slow dance, cake cutting...).",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test \"test/**/*.test.js\"",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "music-metadata": "^11.0.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.setbuilder.app",
+    "productName": "Set Builder",
+    "files": ["main.js", "preload.js", "core/**", "renderer/**", "package.json"],
+    "mac": { "target": "dmg", "category": "public.app-category.music" },
+    "win": { "target": "nsis" }
+  }
+}
